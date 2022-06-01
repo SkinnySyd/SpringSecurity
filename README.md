@@ -10,7 +10,7 @@ et modifier des informations precisés sur ses tiquets
 a Developer en cliquant sur le bouton UPDATE dans le tableau du "/admin/tickets"
 
 3-Developer : le developpeur devant une liste des tiquets pricisant les noms des developpeurs
-pour chaque tiquets; il a la possibilité de modifier seulement l'etat du tiquet nommé 'state'
+pour chaque tiquets; il a la possibilité de modifier seulement l'etat du tiquet nommé 'state' dans "/dev/tickets"
 
 coté securité 
 
