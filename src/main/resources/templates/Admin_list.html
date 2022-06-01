@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Clients management</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link th:href= "@{/css/style.min.css}" rel="stylesheet">
+
+
+</head>
+<body>
+<style>
+    .butt {
+        margin-left: 100px;
+    }
+</style>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">TMS</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item disabled">
+                <a th:href= "@{tickets}"class="nav-link" >Ticket list <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a href= "#" class="nav-link" >Add</a>
+            </li>
+
+            <li class="nav-item">
+                <a th:href= "@{tickets}" class="nav-link active" >Affectation</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<HR>
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row align-items-center">
+            <div class="col-6">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0 d-flex align-items-center">
+                        <li class="breadcrumb-item"><a href="index.html" class="link"><i class="mdi mdi-home-outline fs-4"></i></a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Tickets list</li>
+                    </ol>
+                </nav>
+                <h1 class="mb-0 fw-bold">Tickets list</h1>
+            </div>
+
+        </div>
+    </div>
+    <HR>
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">your tickets list</h4>
+                        <h6 class="card-subtitle">Here you can see all the list that had been add</h6>
+                        <h6 class="card-title m-t-40"><i
+                                class="m-r-5 font-18 mdi mdi-numeric-1-box-multiple-outline"></i> TList</h6>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">id</th>
+                                    <th scope="col">description</th>
+                                    <th scope="col">environement</th>
+                                    <th scope="col">logiciel</th>
+                                    <th scope="col"> urgence</th>
+                                    <th scope="col"> developer</th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each = "ticket: ${tickets}">
+                                    <td th:text= "${ticket.id}"></td>
+                                    <td th:text= "${ticket.description}"></td>
+                                    <td th:text= "${ticket.environement}"></td>
+                                    <td th:text= "${ticket.logiciel}"></td>
+                                    <td th:text= "${ticket.urgence}"></td>
+                                    <td th:text= "${ticket.developer}"></td>
+                                    <td>
+                                        <a th:href="@{/admin/tickets/edit/{id}(id=${ticket.id})}"
+                                           class="btn btn-primary">Update</a>
+
+
+                                        <a th:href="@{/tickets/{id}(id=${ticket.id})}"
+                                           class="btn btn-danger">Delete</a>
+
+                                    </td>
+
+
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End PAge Content -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Right sidebar -->
+        <!-- ============================================================== -->
+        <!-- .right-sidebar -->
+        <!-- ============================================================== -->
+        <!-- End Right sidebar -->
+        <!-- ============================================================== -->
+    </div>
+</div>
+</body>
+
+<script th:src="@{js/jquery.min.js}"></script>
+<!-- Bootstrap tether Core JavaScript -->
+<script th:src="@{js/bootstrap.bundle.min.js}"></script>
+<script th:src="@{js/app-style-switcher.js}"></script>
+<!--Wave Effects -->
+<script th:src="@{js/waves.js}"></script>
+<!--Menu sidebar -->
+<script th:src="@{js/sidebarmenu.js}"></script>
+<!--Custom JavaScript -->
+<script th:src="@{js/custom.js}"></script>
+</html>
