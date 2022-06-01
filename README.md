@@ -2,6 +2,7 @@
   Bonjour Monsieur voici mon application helpdesk 
   vous pouvez importer le fichier gestion_tickets pour avoir une base de données fonctionnelle 
 	il y en a trois  plateforme : 
+	
 1- Client : ajouter des tiquets en cliquant sur ADD dans le navbar du "/tickets"  
 et modifier des informations precisés sur ses tiquets
 	
